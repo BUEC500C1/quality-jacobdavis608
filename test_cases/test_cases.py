@@ -37,3 +37,7 @@ def test_random_input():
     #pass it a dictionary
     arabic_dict = {1: "hello", 2: "testing", 3: "1,2"}
     assert convert_to_rom(arabic_dict) == "N/A"
+
+def test_high_magnitude():
+    #pass too high a magnitude
+    assert convert_to_rom(100000000) == "N/A"

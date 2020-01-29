@@ -17,10 +17,10 @@ def convert_to_rom(arabic_num):
     Converts input Arabic numeral into Roman numeral. Returns Roman numeral as a string.
     '''
     # Check whether the provided input can be represented
-    if (arabic_num > 10**(len(roman_numerals) - 1)): 
-        return "N/A" # Cannot represent numbers beyond the provided numerals
-    elif (not isinstance(arabic_num, int)):         
+    if (not isinstance(arabic_num, int)):         
         return "N/A" # Cannot represent non-integer values
+    if (arabic_num > 10**(int(len(roman_numerals)/2))):
+        return "N/A" # Cannot represent numbers beyond the provided numerals
 
     # Convert the number if it is an integer with a magnitude that is in range
     power_of_ten = 0  # Digit of focus
@@ -28,7 +28,7 @@ def convert_to_rom(arabic_num):
     while (arabic_num > 0):
         digit = arabic_num % 10 # Get first digit
         digit_string = ""
-        print(arabic_num)
+        
         #The naming conventions of roman numerals for each digit, depending on power of 10
         if (digit == 1):   digit_string = roman_numerals[power_of_ten]
         elif (digit == 2): digit_string = roman_numerals[power_of_ten] * 2
