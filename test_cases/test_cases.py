@@ -16,7 +16,7 @@ def test_single_digit():
     assert convert_to_rom(8) == "VIII"
     assert convert_to_rom(9) == "IX"
 
-def test_random():
+def test_easy_input():
     assert convert_to_rom(20) == "XX"
     assert convert_to_rom(203) == "CCIII"
     assert convert_to_rom(2751) == "MMDCCLI"
@@ -24,3 +24,16 @@ def test_random():
     assert convert_to_rom(100000) == "(C)"
     assert convert_to_rom(100600) == "(C)DC"
     assert convert_to_rom(601040) == "(D)(C)MXL"
+
+def test_random_input():
+    assert convert_to_rom("20") == "N/A"
+    assert convert_to_rom(203.443) == "N/A"
+    assert convert_to_rom("2751") == "N/A"
+
+    # pass it a list
+    arabic_nums = [1, 2, 3, 4]
+    assert convert_to_rom(arabic_nums) == "N/A"
+
+    #pass it a dictionary
+    arabic_dict = {1: "hello", 2: "testing", 3: "1,2"}
+    assert convert_to_rom(arabic_dict) == "N/A"
