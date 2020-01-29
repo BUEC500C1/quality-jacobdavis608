@@ -1,7 +1,16 @@
 # EC 500 Building Software
 # Jacob Davis Assignment 1
 # Spring 2020
-import sys
+
+num_maps = {
+    1000 : 'M',
+    500 : 'D',
+    100 : 'C',
+    50 : 'L',
+    10 : 'X',
+    5 : 'V',
+    1 : 'I'
+}
 
 def convert_to_rom(arabic_nums):
     '''
@@ -9,20 +18,5 @@ def convert_to_rom(arabic_nums):
     of strings representing the Roman numerals.
     '''
     # Convert all arabic nums
-    for num in arabic_nums:
-        print(num)
 
-
-
-    return arabic_nums
-    
-
-def main():
-    # Check the command line for arguments
-    if (len(sys.argv) <= 1):
-        print("No arguments provided\n")
-    else: #pass arguments to conversion
-        roman_numerals = convert_to_rom(sys.argv[1:])
-
-if __name__ == "__main__":
-    main()
+    return len(arabic_nums)
